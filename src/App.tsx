@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
+import AppTitle from './Components/AppTitle';
 import { CONSTANTS } from './lib';
 import axios from './requests/axiosMain';
+import AppContainer from './Components/AppContainer';
+
 
 function App() {
   const [data, setData] = useState<object>();
@@ -20,8 +23,9 @@ function App() {
   },[])
   console.log(data);
   return (
-    <div>
-    </div>
+    <AppContainer>
+      <AppTitle titleText='Lovely Trees' />
+    </AppContainer>
   );
 }
 
