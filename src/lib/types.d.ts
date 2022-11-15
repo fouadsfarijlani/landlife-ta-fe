@@ -6,3 +6,7 @@ export interface IHighestTrees {
     year: string,
     highest_trees: IHighestTree[]
 }
+
+export interface IMethods {
+    method: 'PowerCoat' | 'Mycorrhiza' | 'Fencing'
+}

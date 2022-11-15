@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { Box, Grid, Button } from '@mui/material';
 import HighestTree from './HighestTree';
+import BestMethod from './BestMethod';
 import { CONSTANTS } from '../lib/constants';
 
 type userSelection = 'highest Tree' | 'Browse Species' | undefined;
 
 const AppBody = () => {
-    const [userSelections, setUserSelecion] = useState<userSelection>();
+    const [userSelection, setUserSelecion] = useState<userSelection>();
     return (
         <Grid container spacing={2} 
             direction="row" 
@@ -19,11 +20,11 @@ const AppBody = () => {
                 }}>
                 <Box>
                     <Button  fullWidth onClick={()=> setUserSelecion('highest Tree')}>Get Highest Tree</Button>
-                    <Button fullWidth onClick={()=> setUserSelecion('Browse Species')}>Browse Tree Species</Button>
+                    <Button fullWidth onClick={()=> setUserSelecion('Browse Species')}>Best Method Used</Button>
                 </Box>
             </Grid>
             <Grid item xs={6} md={8} sx={{'border-top': 'solid black 1px'}}>
-                <HighestTree /> 
+                {userSelection === 'highest Tree' ? (<HighestTree />) : (<BestMethod />)} 
             </Grid>
         </Grid>
     )
