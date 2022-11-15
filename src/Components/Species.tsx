@@ -1,40 +1,40 @@
 import { Button, FormControl, InputLabel, MenuItem, Select, Typography } from '@mui/material';
 import React, { useState, useEffect } from 'react';
-import { useMemo } from 'react';
 import { CONSTANTS } from '../lib';
-import { IMethods } from '../lib';
+import { ISpecies } from '../lib';
 import axios from '../requests/axiosMain';
 import Loader from './Loader';
 
-const BestMethod = () => {
-    const [methodList, setMethodList] = useState<IMethods[]>();
+const Species = () => {
+    const [speciesList, setSpeciesList] = useState<ISpecies[]>();
     useEffect(() => {
         const fetchData = async() => {
             try {
-              const response = await axios.get(CONSTANTS.endpoints.getMethods);
-              setMethodList(response.data);
+              const response = await axios.get(CONSTANTS.endpoints.getSpecies);
+              setSpeciesList(response.data);
             }
             catch(err) {
-              // Checking if err.response exists
              console.log(err);
             }
           }
           fetchData();
         },[]);
 
+    
+
     return(
         <>
             <Typography
                     variant={'h5'}
                     sx={{'margin-top': CONSTANTS.styles.margin_sm}}>
-                    Best Methods used for species
+                    Lookiup the best methods used for species
             </Typography>
-            {!methodList ? (<Loader />) : (
+            {!speciesList ? (<Loader />) : (
                 <FormControl fullWidth>
-                    <InputLabel>Methods</InputLabel>
-                    <Select label= "Methods">
-                        {methodList.map((method, i) => (
-                            <MenuItem value={method.method} key={i}>{method.method}</MenuItem>
+                    <InputLabel>Species</InputLabel>
+                    <Select label= "species">
+                        {speciesList.map((specie) => (
+                            <MenuItem value={specie.tree_species_id} key={specie.tree_species_id}>{specie.latin_name}</MenuItem>
                         ))}
                     </Select>
                     <Button variant='contained' 
@@ -48,4 +48,4 @@ const BestMethod = () => {
 };
 
 
-export default BestMethod;
+export default Species;

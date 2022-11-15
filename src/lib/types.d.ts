@@ -7,6 +7,7 @@ export interface IHighestTrees {
     highest_trees: IHighestTree[]
 }
 
-export interface IMethods {
-    method: 'PowerCoat' | 'Mycorrhiza' | 'Fencing'
+export interface ISpecies {
+    tree_species_id: number,
+    latin_name: string,
 }
