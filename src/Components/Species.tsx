@@ -25,7 +25,7 @@ const Species = () => {
     const dropDownSelectionHandler = (e: SelectChangeEvent) => {
         setSelectedSpiecies(e.target.value);
     }
-    console.log(selectedSpieceis);
+
     const getBestMethod = async() => {
         try {
           const response = await axios.get(CONSTANTS.endpoints.getBestMethod+`?species_id=${selectedSpieceis}`);
@@ -36,7 +36,6 @@ const Species = () => {
           }
     };
 
-    console.log(displayedData)
     return(
         <>
             <Typography

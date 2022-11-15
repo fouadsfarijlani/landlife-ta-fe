@@ -23,7 +23,7 @@ const HighestTree = () => {
     const yearSelectionHandler = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setYearSelected(e.currentTarget.value);
     }
-    console.log(displayedData);
+
     return (
         <>
             <Typography variant='body2' sx={{'margin-top': CONSTANTS.styles.margin_sm}}>
