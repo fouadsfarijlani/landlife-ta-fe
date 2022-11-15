@@ -1,3 +1,3 @@
 export { CONSTANTS } from './constants';
 
-export type { IHighestTrees, ISpecies } from './types';
+export type { IHighestTrees, ISpecies, IBestMethodForSpecies } from './types';

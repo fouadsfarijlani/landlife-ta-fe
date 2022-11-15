@@ -3,6 +3,7 @@ export const CONSTANTS = {
     endpoints: {
         getHighestTree: '/getHighestTree/',
         getSpecies: '/species/',
+        getBestMethod: '/bestMethodForSpecies/',
     },
     styles: {
         margin_xs: '8px',

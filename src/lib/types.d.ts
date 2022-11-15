@@ -11,3 +11,10 @@ export interface ISpecies {
     tree_species_id: number,
     latin_name: string,
 }
+
+export interface IBestMethodForSpecies {
+    tree_species_id: number,
+    latin_name: string,
+    best_method: string,
+    health_avg: number,
+}
