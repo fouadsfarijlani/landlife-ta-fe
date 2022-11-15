@@ -4,6 +4,7 @@ import AppTitle from './Components/AppTitle';
 import { CONSTANTS } from './lib';
 import axios from './requests/axiosMain';
 import AppContainer from './Components/AppContainer';
+import AppBody from './Components/AppBody';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
   return (
     <AppContainer>
       <AppTitle titleText='Lovely Trees' />
+      <AppBody />
     </AppContainer>
   );
 }
