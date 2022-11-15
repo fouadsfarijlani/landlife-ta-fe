@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
+import { CONSTANTS } from './lib';
 import axios from './requests/axiosMain';
 
 function App() {
@@ -7,7 +8,7 @@ function App() {
   useEffect(()=> {
     const fetchData = async() => {
       try {
-        const response = await axios.get('');
+        const response = await axios.get(CONSTANTS.endpoints.getHighestTree+'?year_monitored=2021');
         setData(response.data);
       }
       catch(err) {
